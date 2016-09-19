@@ -9,6 +9,7 @@ import {
   Cite,
   CodePane,
   Deck,
+  Fill,
   Heading,
   Image,
   Layout,
@@ -19,6 +20,10 @@ import {
   Quote,
   Slide,
   Spectacle,
+  Table,
+  TableRow,
+  TableHeaderItem,
+  TableItem,
   Text
 } from "spectacle";
 
@@ -35,6 +40,9 @@ require("./custom.css");
 
 const slideTransition = ["slide"];
 const images = mapValues({
+  cowboy: require("../images/cowboy.jpg"),
+  lint: require("../images/lint.jpg"),
+  npmShape: require("../images/npm_shape.png"),
   javascript: require("../images/javascript.jpg"),
   javascript2: require("../images/javascript2.jpg"),
   moduleCounts: require("../images/module_counts.png"),
@@ -128,6 +136,220 @@ export default class Presentation extends React.Component {
                 <Link href="http://www.indeed.com/jobtrends/q-backend-q-frontend-q-full-stack.html">Indeed</Link>
               </Text>
             </Layout>
+          </Slide>
+
+          <Slide transition={slideTransition}>
+            <Appear fid="1">
+              <Heading size={2} caps fit>
+                Inline JavaScript
+              </Heading>
+            </Appear>
+            <Appear fid="2">
+              <Heading size={2} caps fit textColor="tertiary">
+                AJAX (async)
+              </Heading>
+            </Appear>
+            <Appear fid="3">
+              <Heading size={2} caps fit>
+                Single Page Applications
+              </Heading>
+            </Appear>
+            <Appear fid="3">
+              <Heading size={2} caps fit textColor="tertiary">
+                Universal JavaScript
+              </Heading>
+            </Appear>
+          </Slide>
+
+          <Slide transition={slideTransition}>
+            <Heading caps fit>Pick your poison</Heading>
+            <Layout>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  Frameworks
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  Libraries
+                </Heading>
+              </Fill>
+            </Layout>
+          </Slide>
+
+          <Slide transition={slideTransition}>
+            <Heading caps fit size={1} textColor="tertiary">
+              Build Tools
+            </Heading>
+            <Layout>
+              <Table>
+                <thead>
+                  <TableRow>
+                    <TableHeaderItem>1st Gen.</TableHeaderItem>
+                    <TableHeaderItem>2nd Gen.</TableHeaderItem>
+                    <TableHeaderItem>3rd Gen.</TableHeaderItem>
+                  </TableRow>
+                </thead>
+                <tbody>
+                  <TableRow>
+                    <TableItem>Make</TableItem>
+                    <TableItem>Grunt</TableItem>
+                    <TableItem>Browserify</TableItem>
+                  </TableRow>
+                  <TableRow>
+                    <TableItem></TableItem>
+                    <TableItem>Gulp</TableItem>
+                    <TableItem>Webpack</TableItem>
+                  </TableRow>
+                  <TableRow>
+                    <TableItem></TableItem>
+                    <TableItem>Broccoli</TableItem>
+                    <TableItem>JSPM</TableItem>
+                  </TableRow>
+                </tbody>
+              </Table>
+            </Layout>
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <Heading caps fit size={1}>
+              ECMAScript
+            </Heading>
+            <List>
+              <Appear><ListItem>1995 - First version by Brendan Eich</ListItem></Appear>
+              <Appear><ListItem>ES5 - 2009</ListItem></Appear>
+              <Appear><ListItem>ES6/ES2015 - 20+ new features (modules and sugar)</ListItem></Appear>
+              <Appear><ListItem>ES7/ES2016 - <code>Array.prototype.includes</code>, <code>**</code></ListItem></Appear>
+              <Appear><ListItem>
+                <Link href="https://github.com/tc39/ecma262">Current proposals</Link>
+              </ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <Heading caps fit size={1}>
+              Language Features
+            </Heading>
+            <List>
+              <Appear><ListItem>Loose typing. Example: functions are first class citizen</ListItem></Appear>
+              <Appear><ListItem>Prototypal inheritance - Classes are sugar on top of this</ListItem></Appear>
+              <Appear><ListItem>Core libraries such as <code>Date</code> and <code>Math</code> derived from Java 1.0</ListItem></Appear>
+              <Appear><ListItem>Strong functional programming capabilities (ES6 makes it sweeter)</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="black">
+            <BlockQuote>
+              <Quote>Java is to JavaScript as car is to carpet</Quote>
+            </BlockQuote>
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <Heading caps fit size={1}>
+              Data Structures
+            </Heading>
+            <List>
+              <Appear><ListItem>ES5 - <code>Object</code>, <code>Array</code>, <code>String</code>, <code>Number</code>, <code>Boolean</code>, <code>null</code>, and <code>undefined</code></ListItem></Appear>
+              <Appear><ListItem>ES6 - <code>Set</code>, <code>Map</code>, <code>WeakSet</code>, and <code>Symbol</code></ListItem></Appear>
+              <Appear><ListItem><Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">Typed arrays for browser binary data</Link></ListItem></Appear>
+              <Appear><ListItem><code>undefined</code> - Absence of value</ListItem></Appear>
+              <Appear><ListItem><code>null</code> - Value known to exist which exact value unknown</ListItem></Appear>
+              <Appear><ListItem>You can mimic other structures, such as queues, using the existing ones</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <Heading size={4}>
+              Queue
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../examples/queue.js")}
+              margin="20px auto"
+            />
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <Heading size={4}>
+              Naïve Generator
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../examples/generator.js")}
+              margin="20px auto"
+            />
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <Heading size={4}>
+              Power Generator
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../examples/power_generator.js")}
+              margin="20px auto"
+            />
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <Heading size={4}>
+              Hoisting
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../examples/hoisting.js")}
+              margin="20px auto"
+            />
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <Heading size={4}>
+              <code>this</code>
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../examples/this.js")}
+              margin="20px auto"
+            />
+          </Slide>
+
+          <Slide transition={slideTransition} bgImage={images.cowboy} bgDarken={0.75} bgColor="black">
+            <BlockQuote>
+              <Quote>{"Array(16).join('hero' - 1) + 'Batman';"}</Quote>
+            </BlockQuote>
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary" bgImage={images.lint} bgDarken={0.85}>
+            <Heading caps>ESLint</Heading>
+            <Heading caps size={2} textColor="primary">Pluggable linting for JavaScript</Heading>
+          </Slide>
+
+          <Slide transition={slideTransition} bgImage={images.npmShape} bgDarken={0.75}>
+            <Heading size={2} textColor="primary" margin="0px auto 40px">
+              npm
+            </Heading>
+            <Link textColor="tertiary" href="https://anvaka.github.io/allnpmviz3d/">allnpmviz3d by @anvaka</Link>
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <Heading size={1} textColor="tertiary">
+              <Link href="http://www.webpackbin.com/">
+                WebpackBin
+              </Link>
+            </Heading>
+          </Slide>
+
+          <Slide transition={slideTransition}>
+            <Heading size={1}>
+              Exercises
+            </Heading>
+            <List>
+              <Appear><ListItem>Head to <Link href="http://www.webpackbin.com/">WebpackBin</Link> and create a new JavaScript file (set "is entry")</ListItem></Appear>
+              <Appear><ListItem><code>console.log</code> something. You can also try <code>bin.log</code></ListItem></Appear>
+              <Appear><ListItem>Develop an <code>add</code> function that accepts two parameters and adds them together.</ListItem></Appear>
+              <Appear><ListItem>*Create a bound version (<code>addTwo</code>) of <code>add</code>. Look up <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">MDN documentation</Link> to learn more.</ListItem></Appear>
+              <Appear><ListItem>**Try out <Link href="http://es6katas.org/">ES6 Katas</Link></ListItem></Appear>
+            </List>
           </Slide>
 
           <Slide transition={slideTransition} bgColor="white" notes="">

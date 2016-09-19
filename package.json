@@ -1,8 +1,8 @@
 {
-  "name": "react-api-design",
+  "name": "javascript-in-2016",
   "private": true,
   "version": "1.0.1",
-  "description": "React API Design - Case Reactabular",
+  "description": "JavaScript in 2016",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf dist",
