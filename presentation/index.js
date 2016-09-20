@@ -40,6 +40,8 @@ require("./custom.css");
 
 const slideTransition = ["slide"];
 const images = mapValues({
+  babelTower: require("../images/babel.jpg"),
+  webpackGraph: require("../images/webpack_graph.png"),
   cowboy: require("../images/cowboy.jpg"),
   lint: require("../images/lint.jpg"),
   npmShape: require("../images/npm_shape.png"),
@@ -177,40 +179,6 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={slideTransition}>
-            <Heading caps fit size={1} textColor="tertiary">
-              Build Tools
-            </Heading>
-            <Layout>
-              <Table>
-                <thead>
-                  <TableRow>
-                    <TableHeaderItem>1st Gen.</TableHeaderItem>
-                    <TableHeaderItem>2nd Gen.</TableHeaderItem>
-                    <TableHeaderItem>3rd Gen.</TableHeaderItem>
-                  </TableRow>
-                </thead>
-                <tbody>
-                  <TableRow>
-                    <TableItem>Make</TableItem>
-                    <TableItem>Grunt</TableItem>
-                    <TableItem>Browserify</TableItem>
-                  </TableRow>
-                  <TableRow>
-                    <TableItem></TableItem>
-                    <TableItem>Gulp</TableItem>
-                    <TableItem>Webpack</TableItem>
-                  </TableRow>
-                  <TableRow>
-                    <TableItem></TableItem>
-                    <TableItem>Broccoli</TableItem>
-                    <TableItem>JSPM</TableItem>
-                  </TableRow>
-                </tbody>
-              </Table>
-            </Layout>
-          </Slide>
-
           <Slide transition={slideTransition} bgColor="primary">
             <Heading caps fit size={1}>
               ECMAScript
@@ -218,8 +186,8 @@ export default class Presentation extends React.Component {
             <List>
               <Appear><ListItem>1995 - First version by Brendan Eich</ListItem></Appear>
               <Appear><ListItem>ES5 - 2009</ListItem></Appear>
-              <Appear><ListItem>ES6/ES2015 - 20+ new features (modules and sugar)</ListItem></Appear>
-              <Appear><ListItem>ES7/ES2016 - <code>Array.prototype.includes</code>, <code>**</code></ListItem></Appear>
+              <Appear><ListItem>ES6 (ES2015) - 20+ new features (modules and sugar)</ListItem></Appear>
+              <Appear><ListItem>ES7 (ES2016) - <code>Array.prototype.includes</code>, <code>**</code></ListItem></Appear>
               <Appear><ListItem>
                 <Link href="https://github.com/tc39/ecma262">Current proposals</Link>
               </ListItem></Appear>
@@ -331,6 +299,84 @@ export default class Presentation extends React.Component {
             <Link textColor="tertiary" href="https://anvaka.github.io/allnpmviz3d/">allnpmviz3d by @anvaka</Link>
           </Slide>
 
+          <Slide transition={slideTransition} bgImage={images.babelTower} bgDarken={0.85}>
+            <Heading size={1} textColor="primary">
+              <Link href="https://babeljs.io/">Babel</Link>
+            </Heading>
+            <List textColor="primary">
+              <Appear><ListItem>ES2015+ and custom features</ListItem></Appear>
+              <Appear><ListItem>Needs polyfills for some</ListItem></Appear>
+              <Appear><ListItem>Presets and plugins</ListItem></Appear>
+              <Appear><ListItem>Be careful with stage 0 features!</ListItem></Appear>
+              <Appear><ListItem>Prefer spelling out the custom features you use</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <iframe
+              width="100%"
+              height="600px"
+              src="https://babeljs.io/repl/"
+            />
+          </Slide>
+
+          <Slide transition={slideTransition}>
+            <Heading caps fit size={1} textColor="tertiary">
+              Build Tools
+            </Heading>
+            <Layout>
+              <Table>
+                <thead>
+                  <TableRow>
+                    <TableHeaderItem>1st Gen.</TableHeaderItem>
+                    <TableHeaderItem>2nd Gen.</TableHeaderItem>
+                    <TableHeaderItem>3rd Gen.</TableHeaderItem>
+                  </TableRow>
+                </thead>
+                <tbody>
+                  <TableRow>
+                    <TableItem>Make</TableItem>
+                    <TableItem>Grunt</TableItem>
+                    <TableItem>Browserify</TableItem>
+                  </TableRow>
+                  <TableRow>
+                    <TableItem></TableItem>
+                    <TableItem>Gulp</TableItem>
+                    <TableItem>Webpack</TableItem>
+                  </TableRow>
+                  <TableRow>
+                    <TableItem></TableItem>
+                    <TableItem>Broccoli</TableItem>
+                    <TableItem>JSPM</TableItem>
+                  </TableRow>
+                </tbody>
+              </Table>
+            </Layout>
+          </Slide>
+
+
+          <Slide transition={slideTransition}>
+            <Heading size={1}>
+              <Link href="https://webpack.github.io/">Webpack</Link>
+            </Heading>
+            <List>
+              <Appear><ListItem>Application as a dependency graph</ListItem></Appear>
+              <Appear><ListItem>Configuration driven</ListItem></Appear>
+              <Appear><ListItem>Powerful, but hard to master</ListItem></Appear>
+              <Appear><ListItem>Focus on bundling</ListItem></Appear>
+              <Appear><ListItem><Link href="https://www.npmjs.com/package/webpack-merge">webpack-merge</Link></ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <Heading size={2}>
+              Application Graph
+            </Heading>
+            <Link href="https://chrisbateman.github.io/webpack-visualizer/">
+              <Image src={images.webpackGraph} margin="40px auto" height="324px" />
+            </Link>
+          </Slide>
+
           <Slide transition={slideTransition} bgColor="primary">
             <Heading size={1} textColor="tertiary">
               <Link href="http://www.webpackbin.com/">
@@ -368,12 +414,6 @@ export default class Presentation extends React.Component {
                 Juho Vepsäläinen
               </Heading>
             </Link>
-          </Slide>
-
-          <Slide transition={slideTransition}>
-            <Heading caps fit size={1} textColor="tertiary">
-              Thank you
-            </Heading>
           </Slide>
         </Deck>
       </Spectacle>
