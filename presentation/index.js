@@ -354,7 +354,6 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-
           <Slide transition={slideTransition}>
             <Heading size={1}>
               <Link href="https://webpack.github.io/">Webpack</Link>
@@ -399,9 +398,11 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={slideTransition} bgColor="white" notes="">
-            <Heading size={1} textColor="primary">
-              SurviveJS
-            </Heading>
+            <Link href="http://www.survivejs.com/">
+              <Heading size={1} textColor="primary">
+                SurviveJS
+              </Heading>
+            </Link>
             <Image src={images.survivejs} margin="0px auto 40px" height="524px"/>
           </Slide>
 
