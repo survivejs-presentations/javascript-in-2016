@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default class App extends React.Component {
-  state: { name: 'Class demo' }
+  state = { name: 'Class demo' }
   constructor(props) {
     super(props);
 
