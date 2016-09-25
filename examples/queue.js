@@ -1,7 +1,8 @@
-function queue(len) {
-  var ret = [];
+function queue (len) {
+  const ret = [];
 
-  ret.push = function(arr) {
+  // ret.push = arr => { - won't work, why?
+  ret.push = function push (arr) {
     if(ret.length == len) {
       ret.shift();
     }
@@ -12,7 +13,7 @@ function queue(len) {
   return ret;
 }
 
-var a = queue(2);
+const a = queue(2);
 
 a.push('cat');
 a.push('dog');

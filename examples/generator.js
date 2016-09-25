@@ -1,4 +1,4 @@
-function numberGenerator() {
+function numberGenerator () {
   return {
     next() {
       return 42;

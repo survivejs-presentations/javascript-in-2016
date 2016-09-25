@@ -49,7 +49,6 @@ const images = mapValues({
   javascript2: require("../images/javascript2.jpg"),
   moduleCounts: require("../images/module_counts.png"),
   redmonk: require("../images/redmonk.png"),
-  jobs: require("../images/jobs.png"),
   jobTitles: require("../images/jobTitles.png"),
   survivejs: require("../images/survivejs.png")
 }, v => v.replace('/', ''));
@@ -95,8 +94,7 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary"
-            notes="<ul><li>Amazing growth rate.</li><li>At this rate bigger than others combined.</li></ul>">
+          <Slide transition={slideTransition} bgColor="primary">
             <Heading size={1} textColor="tertiary">
               Module Counts
             </Heading>
@@ -110,25 +108,9 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary"
-            notes="<ul><li>Angular dominates the work market.</li><li>Early signs of React.</li></ul>">
+          <Slide transition={slideTransition} bgColor="primary">
             <Heading size={1} textColor="tertiary">
               Job Trends
-            </Heading>
-            <Layout>
-              <Image src={images.jobs} padding="20px" />
-            </Layout>
-            <Layout>
-              <Text>
-                <Link href="http://www.indeed.com/jobtrends/q-React.js-q-Knockout-q-Backbone.js-q-Angularjs.html">Indeed</Link>
-              </Text>
-            </Layout>
-          </Slide>
-
-          <Slide transition={slideTransition} bgColor="primary"
-            notes="<ul><li>Also job titles change.</li><li>Increasing demand for full stack developers.</li></ul>">
-            <Heading size={1} textColor="tertiary">
-              Job Trends II
             </Heading>
             <Layout>
               <Image src={images.jobTitles} padding="20px" />
@@ -163,22 +145,6 @@ export default class Presentation extends React.Component {
             </Appear>
           </Slide>
 
-          <Slide transition={slideTransition}>
-            <Heading caps fit>Pick your poison</Heading>
-            <Layout>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Frameworks
-                </Heading>
-              </Fill>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Libraries
-                </Heading>
-              </Fill>
-            </Layout>
-          </Slide>
-
           <Slide transition={slideTransition} bgColor="primary">
             <Heading caps fit size={1}>
               ECMAScript
@@ -186,12 +152,18 @@ export default class Presentation extends React.Component {
             <List>
               <Appear><ListItem>1995 - First version by Brendan Eich</ListItem></Appear>
               <Appear><ListItem>ES5 - 2009</ListItem></Appear>
-              <Appear><ListItem>ES6 (ES2015) - 20+ new features (modules and sugar)</ListItem></Appear>
-              <Appear><ListItem>ES7 (ES2016) - <code>Array.prototype.includes</code>, <code>**</code></ListItem></Appear>
+              <Appear><ListItem>ES2015 (ES6) - 20+ new features (modules and sugar)</ListItem></Appear>
+              <Appear><ListItem>ES2016 (ES7) - <code>array.includes</code>, <code>**</code></ListItem></Appear>
               <Appear><ListItem>
                 <Link href="https://github.com/tc39/ecma262">Current proposals</Link>
               </ListItem></Appear>
             </List>
+          </Slide>
+
+          <Slide transition={slideTransition}>
+            <Heading caps fit size={1} textColor="primary">
+              <Link href="http://node.green/">Node.js ES2015 Support</Link>
+            </Heading>
           </Slide>
 
           <Slide transition={slideTransition} bgColor="primary">
@@ -200,9 +172,10 @@ export default class Presentation extends React.Component {
             </Heading>
             <List>
               <Appear><ListItem>Loose typing. Example: functions are first class citizen</ListItem></Appear>
-              <Appear><ListItem>Prototypal inheritance - Classes are sugar on top of this</ListItem></Appear>
+              <Appear><ListItem>Prototypal inheritance - classes are sugar on top of this</ListItem></Appear>
               <Appear><ListItem>Core libraries such as <code>Date</code> and <code>Math</code> derived from Java 1.0</ListItem></Appear>
-              <Appear><ListItem>Strong functional programming capabilities (ES6 makes it sweeter)</ListItem></Appear>
+              <Appear><ListItem>Functional programming capabilities (ES6 makes it sweeter)</ListItem></Appear>
+              <Appear><ListItem>Main personal gripe - weak structures (mutability)</ListItem></Appear>
             </List>
           </Slide>
 
@@ -277,6 +250,50 @@ export default class Presentation extends React.Component {
             <CodePane
               lang="js"
               source={require("raw!../examples/this.js")}
+              margin="20px auto"
+            />
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <Heading size={4}>
+              Functions
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../examples/functions.js")}
+              margin="20px auto"
+            />
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <Heading size={4}>
+              Modules
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../examples/modules.js")}
+              margin="20px auto"
+            />
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <Heading size={4}>
+              Classes I
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../examples/classes_01.js")}
+              margin="20px auto"
+            />
+          </Slide>
+
+          <Slide transition={slideTransition} bgColor="primary">
+            <Heading size={4}>
+              Classes II
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../examples/classes_02.js")}
               margin="20px auto"
             />
           </Slide>

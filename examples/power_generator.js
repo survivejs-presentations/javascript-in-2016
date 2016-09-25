@@ -1,5 +1,5 @@
-function powerGenerator() {
-  let i = 0;
+function powerGenerator () {
+  let i = 0; // why const is not allowed?
 
   return {
     next() {
