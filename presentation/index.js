@@ -56,7 +56,10 @@ const images = mapValues({
 preloader(images);
 
 const theme = createTheme({
-  primary: "#09b5c4"
+  primary: "white",
+  secondary: "black",
+  tertiary: "#09b5c4",
+  quartenary: "rgba(255, 219, 169, 0.43)"
 });
 
 export default class Presentation extends React.Component {
@@ -64,14 +67,14 @@ export default class Presentation extends React.Component {
     return (
       <Spectacle theme={theme}>
         <Deck transition={slideTransition} transitionDuration={500}>
-          <Slide transition={slideTransition} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1} textColor="black">
+          <Slide transition={slideTransition} bgColor="secondary">
+            <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
               JavaScript in 2016
             </Heading>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="tertiary">
-            <Heading caps fit size={1} textColor="primary">
+          <Slide transition={slideTransition}>
+            <Heading caps fit size={1}>
               JavaScript Usage on Sites
             </Heading>
             <Markdown>
@@ -85,8 +88,7 @@ export default class Presentation extends React.Component {
             </Markdown>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary"
-            notes="<ul><li>Popular</li><li>Same goes for AltJS</li></ul>">
+          <Slide transition={slideTransition}>
             <Layout>
               <Link href="http://redmonk.com/jgovernor/2015/07/31/programming-language-rankings-summer-2015/">
                 <Image src={images.redmonk} />
@@ -94,8 +96,8 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
-            <Heading size={1} textColor="tertiary">
+          <Slide transition={slideTransition}>
+            <Heading size={1}>
               Module Counts
             </Heading>
             <Layout>
@@ -108,8 +110,8 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
-            <Heading size={1} textColor="tertiary">
+          <Slide transition={slideTransition}>
+            <Heading size={1}>
               Job Trends
             </Heading>
             <Layout>
@@ -145,7 +147,7 @@ export default class Presentation extends React.Component {
             </Appear>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <Heading caps fit size={1}>
               ECMAScript
             </Heading>
@@ -161,31 +163,31 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={slideTransition}>
-            <Heading caps fit size={1} textColor="primary">
+            <Heading caps fit size={1}>
               <Link href="http://node.green/">Node.js ES2015 Support</Link>
             </Heading>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <Heading caps fit size={1}>
               Language Features
             </Heading>
             <List>
               <Appear><ListItem>Loose typing. Example: functions are first class citizen</ListItem></Appear>
               <Appear><ListItem>Prototypal inheritance - classes are sugar on top of this</ListItem></Appear>
-              <Appear><ListItem>Core libraries such as <code>Date</code> and <code>Math</code> derived from Java 1.0</ListItem></Appear>
+              <Appear><ListItem><code>Date</code> and <code>Math</code> derived from Java 1.0</ListItem></Appear>
               <Appear><ListItem>Functional programming capabilities (ES6 makes it sweeter)</ListItem></Appear>
               <Appear><ListItem>Main personal gripe - weak structures (mutability)</ListItem></Appear>
             </List>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="black">
+          <Slide transition={slideTransition}>
             <BlockQuote>
               <Quote>Java is to JavaScript as car is to carpet</Quote>
             </BlockQuote>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <Heading caps fit size={1}>
               Data Structures
             </Heading>
@@ -195,11 +197,11 @@ export default class Presentation extends React.Component {
               <Appear><ListItem><Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">Typed arrays for browser binary data</Link></ListItem></Appear>
               <Appear><ListItem><code>undefined</code> - Absence of value</ListItem></Appear>
               <Appear><ListItem><code>null</code> - Value known to exist which exact value unknown</ListItem></Appear>
-              <Appear><ListItem>You can mimic other structures, such as queues, using the existing ones</ListItem></Appear>
+              <Appear><ListItem>You can mimic other structures using the existing ones</ListItem></Appear>
             </List>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <Heading size={4}>
               Queue
             </Heading>
@@ -210,7 +212,7 @@ export default class Presentation extends React.Component {
             />
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <Heading size={4}>
               Naïve Generator
             </Heading>
@@ -221,7 +223,7 @@ export default class Presentation extends React.Component {
             />
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <Heading size={4}>
               Power Generator
             </Heading>
@@ -232,7 +234,7 @@ export default class Presentation extends React.Component {
             />
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <Heading size={4}>
               Hoisting
             </Heading>
@@ -243,7 +245,7 @@ export default class Presentation extends React.Component {
             />
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <Heading size={4}>
               <code>this</code>
             </Heading>
@@ -254,7 +256,7 @@ export default class Presentation extends React.Component {
             />
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <Heading size={4}>
               Functions
             </Heading>
@@ -265,7 +267,7 @@ export default class Presentation extends React.Component {
             />
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <Heading size={4}>
               Modules
             </Heading>
@@ -276,7 +278,7 @@ export default class Presentation extends React.Component {
             />
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <Heading size={4}>
               Classes I
             </Heading>
@@ -287,7 +289,7 @@ export default class Presentation extends React.Component {
             />
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <Heading size={4}>
               Classes II
             </Heading>
@@ -298,13 +300,13 @@ export default class Presentation extends React.Component {
             />
           </Slide>
 
-          <Slide transition={slideTransition} bgImage={images.cowboy} bgDarken={0.75} bgColor="black">
+          <Slide transition={slideTransition} bgImage={images.cowboy} bgDarken={0.75}>
             <BlockQuote>
               <Quote>{"Array(16).join('hero' - 1) + 'Batman';"}</Quote>
             </BlockQuote>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary" bgImage={images.lint} bgDarken={0.85}>
+          <Slide transition={slideTransition} bgImage={images.lint} bgDarken={0.85}>
             <Heading caps>ESLint</Heading>
             <Heading caps size={2} textColor="primary">Pluggable linting for JavaScript</Heading>
           </Slide>
@@ -329,7 +331,7 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <iframe
               width="100%"
               height="600px"
@@ -338,7 +340,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={slideTransition}>
-            <Heading caps fit size={1} textColor="tertiary">
+            <Heading caps fit size={1}>
               Build Tools
             </Heading>
             <Layout>
@@ -384,7 +386,7 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <Heading size={2}>
               Application Graph
             </Heading>
@@ -393,7 +395,7 @@ export default class Presentation extends React.Component {
             </Link>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="primary">
+          <Slide transition={slideTransition}>
             <Heading size={1} textColor="tertiary">
               <Link href="http://www.webpackbin.com/">
                 WebpackBin
@@ -414,9 +416,9 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
-          <Slide transition={slideTransition} bgColor="white" notes="">
+          <Slide transition={slideTransition}>
             <Link href="http://www.survivejs.com/">
-              <Heading size={1} textColor="primary">
+              <Heading size={1}>
                 SurviveJS
               </Heading>
             </Link>
@@ -432,11 +434,6 @@ export default class Presentation extends React.Component {
                 Juho Vepsäläinen
               </Heading>
             </Link>
-            <Layout>
-              <Text>
-                <Link href="http://www.appelsiini.fi/">With special thanks to Elisa Appelsiini</Link>
-              </Text>
-            </Layout>
           </Slide>
         </Deck>
       </Spectacle>
